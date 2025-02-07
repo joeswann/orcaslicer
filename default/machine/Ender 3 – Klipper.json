@@ -48,7 +48,7 @@
         "30"
     ],
     "machine_start_gcode": "START_PRINT EXTRUDER_TEMP=[first_layer_temperature] BED_TEMP=[first_layer_bed_temperature] SIZE={first_layer_print_min[0]}_{first_layer_print_min[1]}_{first_layer_print_max[0]}_{first_layer_print_max[1]}",
-    "name": "Ender 3 – Klipper",
+    "name": "Bender",
     "nozzle_type": "hardened_steel",
     "print_host": "klipper.local",
     "printable_area": [
