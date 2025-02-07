@@ -1,53 +1,29 @@
-This repository contains custom configuration files for OrcaSlicer, tuned for performance with an emphasis on speed. These profiles are designed for an Ender 3 equipped with a BTT SKR Mini E3 V3, Creality Sprite Pro hotend, CR Touch auto-leveling sensor, a PEI bed, and dual Z axes.
+Overview
+This repository provides tailored 3D printer configuration files optimized for speed and performance, designed for your Ender 3 equipped with a BTT SKR Mini E3 V3 controller, Creality Sprite Pro hotend, CR Touch auto-leveling sensor, and advanced hardware.
 
-Hardware Overview
-Printer: Ender 3 with dual Z
-Controller: BTT SKR Mini E3 V3 running Klipper firmware
-Hotend: Creality Sprite Pro (hardened steel nozzle)
-Auto Bed Leveling: CR Touch
-Build Surface: PEI
-Firmware: Klipper
-Repository Structure
-./hints.cereal
-Optional hints file (currently empty) for additional printer hints if needed.
+Hardware Specifications:
+- Printer: Ender 3 with dual Z axes
+- Controller: BTT SKR Mini E3 V3 running Klipper firmware
+- Hotend: Creality Sprite Pro with a hardened steel nozzle
+- Build Surface: PEI with CR Touch auto-leveling
 
-./.gitignore
-Ignores files like .DS_Store to keep the repository clean.
+Repository Layout:
+• hints.cereal: Additional printer hints and configurations.
+• .gitignore: Maintains repository hygiene by ignoring unnecessary files.
+• default/filament/: Contains filament profiles, including Bender PLA.
+• default/machine/: Machine configuration files for motion parameters and G-code settings.
+• default/process/: Slicing process settings optimized for high-speed printing.
 
-./default/filament/
-Contains filament profiles (e.g., Bender PLA.json and its info file) with temperature, flow, and cooling settings.
+Performance & Tuning:
+Optimised acceleration, jerk values, and travel speeds reduce print times without sacrificing print quality. Fine-tuned retraction, bridge settings, and initial layer adhesion further enhance performance.
 
-./default/machine/
-Contains machine configurations (e.g., Ender 3 – Klipper.json and its info file) that define motion parameters, start/end G-code, and physical limits.
+Usage:
+For Klipper: Import machine configurations from default/machine/.
+For OrcaSlicer: Load filament and process profiles from default/filament/ and default/process/.
+Apply changes gradually and test extensively with calibration prints.
 
-./default/process/
-Contains slicing process profiles tuned for speed and performance (e.g., 0.20mm Standard @Bender.json and common FDM process settings).
+Resources:
+• Klipper Documentation
+• OrcaSlicer GitHub Repository
 
-Performance Tuning Philosophy
-These configurations have been tuned to reduce print times without compromising the essential quality and reliability of prints. Key adjustments include:
-
-Higher Accelerations & Jerk Values:
-Aggressive settings (e.g., default acceleration increased to 8000 mm/s² and above) reduce idle time during printing. Monitor for ringing or mechanical stress and adjust if necessary.
-
-Increased Speeds:
-Enhanced travel, extruding, and support speeds (e.g., travel speeds up to 400 mm/s) help shorten non-print moves. Be mindful of potential artifacts at extreme speeds.
-
-Optimized Retraction & Bridge Settings:
-Adjusted retraction lengths and speeds improve transition times and reduce stringing, while bridge acceleration and speed values are raised to cut bridging times—test for overhang quality.
-
-First-Layer Conservatism:
-First-layer speeds and accelerations remain moderated to ensure bed adhesion and a solid print foundation.
-
-Usage Instructions
-Klipper Integration:
-Import the machine configuration (Ender 3 – Klipper.json) into your Klipper setup. Ensure that your firmware settings are aligned with these values and that your hardware can handle the increased motion parameters.
-
-OrcaSlicer Setup:
-Load the filament and process profiles into OrcaSlicer. Verify that the profile names and paths match those referenced in the slicer settings.
-
-Incremental Tuning:
-Use the included diff suggestions as a baseline for performance tuning. It’s recommended to apply changes gradually and test with calibration prints. Adjust acceleration, jerk, and speed settings if you notice artifacts or mechanical issues.
-
-References
-Klipper Configuration Reference
-OrcaSlicer GitHub Repository
+Enjoy enhanced printing performance with these advanced configurations!
